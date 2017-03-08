@@ -1,0 +1,48 @@
+/* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: 'HelveticaLTStdComp';
+    src: url('assets/fonts/helvetica/HelveticaLTStdComp.otf')  format('opentype');
+}
+@font-face {
+    font-family: 'HelveticaLTStdLight';
+    src: url('assets/fonts/helvetica/HelveticaLTStdLight.otf')  format('opentype');
+}
+@font-face {
+    font-family: 'HelveticaLTStdLightCond';
+    src: url('assets/fonts/helvetica/HelveticaLTStdLightCond.otf')  format('opentype');
+}
+
+.block{
+    display: block;
+}
+.inblock{
+    display: inline-block;
+}
+.light-gray{
+    color: #333333;
+}
+
+.text-upper{
+    text-transform: uppercase
+}
+
+.text-center{
+    text-align: center;
+}
+
+.text-normal{
+    font-weight: normal;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #FFFFFF;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #000000;
+}
