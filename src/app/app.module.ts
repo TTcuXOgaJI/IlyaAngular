@@ -5,11 +5,11 @@ import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { TopNavComponent } from './top-nav/top-nav.component';
-import { AngularFireModule } from 'angularfire2';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { BottomNavComponent } from './bottom-nav/bottom-nav.component';
+import { AngularFireModule } from "angularfire2";
 // Must export the config
 export const firebaseConfig = {
   apiKey: "AIzaSyDj_1uZqjEYXy9qpQ6_PLU30IRrTLKALhQ",

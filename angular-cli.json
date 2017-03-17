@@ -24,8 +24,8 @@
         "../src/assets/jqueryProgresstracker/css/jquery.progresstracker.css"
       ],
       "scripts": [
-        "../node_modules/jquery/dist/jquery.js",
-        "../node_modules/bootstrap/dist/js/bootstrap.js",
+        "../node_modules/jquery/dist/jquery.min.js",
+        "../node_modules/bootstrap/dist/js/bootstrap.min.js",
          "../src/assets/jqueryProgresstracker/js/jquery.progresstracker.js"
       ],
       "environmentSource": "environments/environment.ts",
