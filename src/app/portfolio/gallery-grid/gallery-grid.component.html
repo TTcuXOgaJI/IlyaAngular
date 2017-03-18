@@ -1,6 +1,0 @@
-<div>{{(gridData | async)?.projects}}</div>
-<div class="thumb" *ngFor="let project of (gridData | async); let i = index;">
-    <button class="thumbnail scroll-link" (click)="scroll($event)" href="#" attr.data-id="ptsection-{{i}}">
-      <img class="img-responsive" src="{{project.logoUri}}" alt="{{project.title}}">
-    </button>
-</div>
