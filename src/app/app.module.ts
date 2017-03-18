@@ -13,6 +13,7 @@ import { AngularFireModule } from "angularfire2";
 import { GalleryGridComponent } from './portfolio/gallery-grid/gallery-grid.component';
 import { ProjectSectionComponent } from './portfolio/project-section/project-section.component';
 import { FirebaseService } from "app/firebase-service/firebase.service";
+import { TransformDirective } from "app/directives/transform.directive";
 // Must export the config
 export const firebaseConfig = {
   apiKey: "AIzaSyDj_1uZqjEYXy9qpQ6_PLU30IRrTLKALhQ",
@@ -45,7 +46,8 @@ const appRoutes: Routes = [
     ContactComponent,
     BottomNavComponent,
     GalleryGridComponent,
-    ProjectSectionComponent
+    ProjectSectionComponent,
+    TransformDirective
   ],
   imports: [
     BrowserModule,

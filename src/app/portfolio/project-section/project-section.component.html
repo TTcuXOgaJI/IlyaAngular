@@ -1,4 +1,4 @@
-<div class="page-section pt-section" attr.data-name="{{slideData.title}}" attr.id="ptsection-{{slideNumber}}">
+<div class="page-section pt-section" attr.data-name="{{slideData.title}}" attr.id="ptsection-{{slideNumber}}" >
 
   <div class="page-section" data-name="עיצוב פונט אסטרונומיה" id="ptsection-{{slideNumber}}">
     <div class="container bounded">
@@ -11,9 +11,9 @@
               *ngFor="let slide of slideData.gallery; let i = index; let isFirst = first" [class.active]="isFirst"></li>
           </ol>
           <!-- Wrapper for carousel items -->
-          <div class="carousel-inner">
+          <div class="carousel-inner" >
             <div class="item " *ngFor="let slide  of slideData.gallery; let j = index; let isFirst = first" [class.active]="isFirst">
-              <div [ngStyle]="{'background-image': 'url(' + slide.url + ')'}" class="myImg"></div>
+              <div [ngStyle]="{'background-image': 'url(' + slide.url + ')'}" class="myImg" ></div>
               <div class="slide-description">
                 <p>{{slideData.title}}</p>
               </div>

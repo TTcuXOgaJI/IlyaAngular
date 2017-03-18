@@ -1,6 +1,8 @@
+<div ip-transform='{ "force" : "0.05" , "easeOutFactor" : "0.05" }'>
 <div class="projects-gallery-grid">
     <ip-gallery-grid [gridData]="portfolioData"></ip-gallery-grid>
 </div>
 <div class="container navigationPageContainer">
     <ip-project-section *ngFor="let project of (portfolioData | async); let i = index; let last = last" [slideNumber]="i" [slideData]="project" [ready]="last == i" ></ip-project-section >
+</div>
 </div>

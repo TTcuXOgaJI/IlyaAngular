@@ -27,7 +27,7 @@ export class GalleryGridComponent implements OnInit {
     var topElementOuter = $('#topElement').outerHeight(true);
     if ($(id).get(0)) {
       var targetOffset = $(id).offset().top - (topElementTop + topElementOuter);
-      $('html,body').animate({ scrollTop: targetOffset }, 1200);
+      $('html,body').animate({ scrollTop: targetOffset - 100 }, 1200);
     }
   }
 }
