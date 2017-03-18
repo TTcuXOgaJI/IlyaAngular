@@ -10,7 +10,9 @@ export class ProjectSectionComponent implements OnInit, AfterViewInit {
 
   @Input() slideData: FirebaseObjectObservable<any>;
   @Input() slideNumber: number;
-  @Input() ready: boolean;
+   @Input() ready: boolean;
+  @Input() isLeft: boolean;
+  @Input() isRight: boolean;
   constructor() { }
 
   ngOnInit() {
