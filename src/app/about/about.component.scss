@@ -1,5 +1,53 @@
 :host{
     display: block;
-    min-height: 100vh;
-    margin-top: 271px;
+    margin-top: 240px;
+}
+
+@font-face {
+    font-family: 'almonidlAAAregular';
+    src: url('../../assets/fonts/almoni/almoni-dl-aaa-regular.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'almonidlAAAbold';
+    src: url('../../assets/fonts/almoni/almoni-dl-aaa-bold.otf') format('opentype');
+}
+
+
+.table{
+        display: table;
+    height: 100%;
+}
+
+.table-cell{
+        display: table-cell;
+}
+
+.table-cell-vertical-center{
+    vertical-align: middle;
+}
+
+.aboutContainer{
+    /*margin-top: 263px;*/
+    height: calc(100vh - 385px);
+    margin-bottom: 48px;
+}
+#myProfileImage{
+    /*border-radius: 20%;*/
+    border: 1px solid black;
+    width: 100%;
+    height: 100%;
+}
+
+#profileImageWrapper{
+    padding: 48px 24px 48px 48px;
+}
+
+#aboutContentWrapper{
+    padding: 48px 24px 48px 48px;
+}
+
+hr {
+    border-style: solid none;
+    border-width: 1px 0;
 }

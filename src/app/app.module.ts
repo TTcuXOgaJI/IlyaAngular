@@ -10,6 +10,9 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { BottomNavComponent } from './bottom-nav/bottom-nav.component';
 import { AngularFireModule } from "angularfire2";
+import { GalleryGridComponent } from './portfolio/gallery-grid/gallery-grid.component';
+import { ProjectSectionComponent } from './portfolio/project-section/project-section.component';
+import { FirebaseService } from "app/firebase-service/firebase.service";
 // Must export the config
 export const firebaseConfig = {
   apiKey: "AIzaSyDj_1uZqjEYXy9qpQ6_PLU30IRrTLKALhQ",
@@ -40,7 +43,9 @@ const appRoutes: Routes = [
     PortfolioComponent,
     AboutComponent,
     ContactComponent,
-    BottomNavComponent
+    BottomNavComponent,
+    GalleryGridComponent,
+    ProjectSectionComponent
   ],
   imports: [
     BrowserModule,
@@ -49,7 +54,7 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     AngularFireModule.initializeApp(firebaseConfig)
   ],
-  providers: [],
+  providers: [FirebaseService],
   bootstrap: [AppComponent],
 })
 export class AppModule { }

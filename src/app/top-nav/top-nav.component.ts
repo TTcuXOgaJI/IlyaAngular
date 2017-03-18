@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFire, FirebaseObjectObservable } from 'angularfire2';
+import { FirebaseService } from "app/firebase-service/firebase.service";
 
 @Component({
   selector: 'ip-top-nav',
@@ -8,8 +9,8 @@ import { AngularFire, FirebaseObjectObservable } from 'angularfire2';
 })
 export class TopNavComponent implements OnInit {
   navigationTab: FirebaseObjectObservable<any>;
-  constructor(af: AngularFire) {
-    this.navigationTab = af.database.object('https://ilya-pisman.firebaseio.com/topNavigation');
+  constructor(private firebaseService :FirebaseService) {
+   this.navigationTab =  firebaseService.getDataByUrl('https://ilya-pisman.firebaseio.com/topNavigation');
    }
 
   ngOnInit() {

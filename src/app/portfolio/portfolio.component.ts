@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-// import * as $ from 'jquery';
+import { Component, OnInit, Input, AfterViewInit } from '@angular/core';
+import { FirebaseObjectObservable } from "angularfire2";
+import { FirebaseService } from "app/firebase-service/firebase.service";
+import { Router, NavigationEnd } from "@angular/router";
 
 @Component({
   selector: 'ip-portfolio',
@@ -9,11 +11,18 @@ import { Component, OnInit } from '@angular/core';
 
 
 
-export class PortfolioComponent implements OnInit {
+export class PortfolioComponent implements OnInit, AfterViewInit {
 
-  constructor() { }
+  ngAfterViewInit(): void {
+    this.portfolioData.subscribe(
+      data => {
+        let $this = this;
+        setTimeout(function () { $this.initTracker() });
+      }
+    );
+  }
 
-  ngOnInit() {
+  initTracker() {
     $('body').progressTracker({
       linking: true,
       tooltip: "hover",
@@ -24,17 +33,23 @@ export class PortfolioComponent implements OnInit {
     });
   }
 
-  scroll($event) {
-    $event.preventDefault();
-    let sectionId:any = $event.currentTarget.getAttribute('data-id');
-    this.scrollToID("#"+sectionId,750);
+  portfolioData: FirebaseObjectObservable<any>;
+
+  constructor(private firebaseService: FirebaseService, private router: Router) {
+    this.portfolioData = firebaseService.getDataByUrl('https://ilya-pisman.firebaseio.com/projects');
+    router.events.forEach((event) => {
+      if (event instanceof NavigationEnd) {
+        $('.progress-tracker').remove();
+      }
+    });
   }
 
- scrollToID(id, speed) {
-    var topElementTop = $('#topElement').position().top;
-    var topElementOuter = $('#topElement').outerHeight(true);
-    var targetOffset = $(id).offset().top - (topElementTop + topElementOuter);
-    $('html,body').animate({scrollTop: targetOffset}, 1200);
-}
+  ngOnInit() {
+
+  }
+
+
+
+
 
 }
