@@ -23,7 +23,7 @@ export class PortfolioComponent implements OnInit, AfterViewInit {
   }
 
   initTracker() {
-    $('body').progressTracker({
+    (<any>$('body')).progressTracker({
       linking: true,
       tooltip: "hover",
       negativeTolerance: 0,
