@@ -1,0 +1,84 @@
+<div class="page-section pt-section" attr.data-name="{{slideData.title}}" attr.id="ptsection-{{slideNumber}}">
+
+  <div class="page-section" data-name="עיצוב פונט אסטרונומיה" id="ptsection-{{slideNumber}}">
+    <div class="container bounded">
+      <hr/>
+      <div class="col-lg-8 col-md-8 col-xs-8 galleryElement">
+        <div id="myCarousel{{slideNumber}}" class="carousel slide carousel-fit  myCarousel{{slideNumber}}" data-ride="carousel">
+          <!-- Carousel indicators -->
+          <ol class="carousel-indicators">
+            <li attr.data-target="#myCarousel{{slideNumber}}" (click)="slideCarousel($event)"  attr.data-carouselTarget="myCarouselModal{{slideNumber}}" attr.data-slide-to="{{i}}" class="innerSlider" 
+              *ngFor="let slide of slideData.gallery; let i = index; let isFirst = first" [class.active]="isFirst"></li>
+          </ol>
+          <!-- Wrapper for carousel items -->
+          <div class="carousel-inner">
+            <div class="item " *ngFor="let slide  of slideData.gallery; let j = index; let isFirst = first" [class.active]="isFirst">
+              <div [ngStyle]="{'background-image': 'url(' + slide.url + ')'}" class="myImg"></div>
+              <div class="slide-description">
+                <p>{{slideData.title}}</p>
+              </div>
+            </div>
+          </div>
+          <!-- Carousel controls -->
+          <button type="button" class="btn btn-carousel-modal" attr.data-carousel-container="carouselContainer{{slideNumber}}" data-toggle="modal"
+            (click)="showModal($event)" attr.data-target="myModal{{slideNumber}}" attr.data-local="myCarousel{{slideNumber}}"></button>
+          <a class="carousel-control left" href="#myCarousel{{slideNumber}}" attr.data-carouselTarget="#myCarouselModal{{slideNumber}}" (click)="carouselPrev($event)" data-slide="prev">
+            <span class="glyphicon glyphicon-menu-left"></span>
+          </a>
+          <a class="carousel-control right" href="#myCarousel{{slideNumber}}" attr.data-carouselTarget="#myCarouselModal{{slideNumber}}" (click)="carouselNext($event)"  data-slide="next">
+            <span class="glyphicon glyphicon-menu-right"></span>
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-4 col-xs-4">
+        <h3 class="projectLabel">{{slideData.title}}</h3>
+        <p class="projectDescription">
+          {{slideData.description}}
+        </p>
+        <br/>
+      </div>
+    </div>
+    <!--/.container-->
+  </div>
+
+  <div class="modal fade modal-fullscreen force-fullscreen" attr.id="myModal{{slideNumber}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        </div>
+        <div class="modal-body">
+          <div id="myCarouselModal{{slideNumber}}"  class="carousel slide carousel-fit  myCarouselModal{{slideNumber}}"  data-ride="carousel">
+            <!-- Carousel indicators -->
+            <ol class="carousel-indicators">
+              <li attr.data-target="#myCarouselModal{{slideNumber}}"   attr.data-carouselTarget="myCarousel{{slideNumber}}" attr.data-slide-to="{{i}}" class="innerSlider" (click)="slideCarousel($event)"
+                *ngFor="let slide of slideData.gallery; let i = index; let isFirst = first" [class.active]="isFirst"></li>
+            </ol>
+            <!-- Wrapper for carousel items -->
+            <div class="carousel-inner">
+              <div class="item " *ngFor="let slide  of slideData.gallery; let j = index; let isFirst = first" [class.active]="isFirst">
+                <div [ngStyle]="{'background-image': 'url(' + slide.url + ')'}" class="myImg modal-image"></div>
+                <div class="slide-description">
+                  <p>{{slideData.title}}</p>
+                </div>
+              </div>
+            </div>
+            <!-- Carousel controls -->
+            <a class="carousel-control left" href="#myCarouselModal{{slideNumber}}"  attr.data-carouselTarget="#myCarousel{{slideNumber}}" (click)="carouselPrev($event)" data-slide="prev">
+              <span class="glyphicon glyphicon-menu-left"></span>
+            </a>
+            <a class="carousel-control right" href="#myCarouselModal{{slideNumber}}" attr.data-carouselTarget="#myCarousel{{slideNumber}}" (click)="carouselNext($event)" data-slide="next">
+              <span class="glyphicon glyphicon-menu-right"></span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
+  <!-- /.modal -->
+
+
+</div>
