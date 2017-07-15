@@ -16,21 +16,23 @@ import { FirebaseService } from "app/firebase-service/firebase.service";
 // Must export the config
 export const firebaseConfig = {
   apiKey: "AIzaSyDj_1uZqjEYXy9qpQ6_PLU30IRrTLKALhQ",
-    authDomain: "ilya-pisman.firebaseapp.com",
-    databaseURL: "https://ilya-pisman.firebaseio.com",
-    storageBucket: "ilya-pisman.appspot.com",
-    messagingSenderId: "386960438365"
+  authDomain: "ilya-pisman.firebaseapp.com",
+  databaseURL: "https://ilya-pisman.firebaseio.com",
+  storageBucket: "ilya-pisman.appspot.com",
+  messagingSenderId: "386960438365"
 };
 
 const appRoutes: Routes = [
   { path: 'portfolio', component: PortfolioComponent },
-  { path: 'about',      component: AboutComponent },
-  { path: 'contact',      component: ContactComponent },
-  { path: '',
+  { path: 'about', component: AboutComponent },
+  { path: 'contact', component: ContactComponent },
+  {
+    path: '',
     redirectTo: 'portfolio',
     pathMatch: 'full'
   }
 ];
+
 
 
 
@@ -51,7 +53,7 @@ const appRoutes: Routes = [
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(appRoutes),
+    RouterModule.forRoot(appRoutes, { useHash: true }),
     AngularFireModule.initializeApp(firebaseConfig)
   ],
   providers: [FirebaseService],

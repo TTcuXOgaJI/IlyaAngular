@@ -1,6 +1,10 @@
-:host{
+:host {
     display: block;
-    margin-top: 240px;
+    margin-top: 216px;
+    min-height: calc(100vh - 313px); // height: calc(100vh - 313px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 @font-face {
@@ -13,38 +17,61 @@
     src: url('../../assets/fonts/almoni/almoni-dl-aaa-bold.otf') format('opentype');
 }
 
+.sep {
+    width: 30px;
+    height: 3px;
+    margin: 8px 0px;
+    background-color: black
+}
 
-.table{
-        display: table;
+.table {
+    display: flex;
     height: 100%;
+    flex-direction: row
 }
 
-.table-cell{
-        display: table-cell;
+.table-cell {
+    display: table-cell;
 }
 
-.table-cell-vertical-center{
+.table-cell-vertical-center {
     vertical-align: middle;
 }
 
-.aboutContainer{
+.aboutContainer {
     /*margin-top: 263px;*/
-    height: calc(100vh - 385px);
-    margin-bottom: 48px;
+    height: 100%;
+    margin-bottom: 0px;
 }
-#myProfileImage{
+
+.aboutContainer-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#myProfileImage {
     /*border-radius: 20%;*/
     border: 1px solid black;
-    width: 100%;
+    float: right;
     height: 100%;
 }
 
-#profileImageWrapper{
-    padding: 48px 24px 48px 48px;
+#profileImageWrapper {
+    padding: 48px;
+    height: 458px;
+    width: 458px;
 }
 
-#aboutContentWrapper{
-    padding: 48px 24px 48px 48px;
+#aboutContentWrapper {
+    padding: 48px;
+    height: 458px;
+    width: 458px;
+    h3 {
+        margin: 0px;
+    }
 }
 
 hr {

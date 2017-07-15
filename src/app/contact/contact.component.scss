@@ -1,5 +1,38 @@
-:host{
+:host {
     display: block;
-    min-height: 100vh;
-    margin-top: 271px;
+    min-height: calc(100vh - 313px);
+    margin-top: 216px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    font-family: HelveticaLTStdComp;
+    text-transform: uppercase;
+    h1 {
+        margin: 0px;
+        font-size: 48px;
+    }
+}
+
+.phone,
+.mail {
+    font-size: 24px;
+}
+
+.sep {
+    width: 30px;
+    height: 3px;
+    margin: 8px 0px;
+    background-color: black
 }
